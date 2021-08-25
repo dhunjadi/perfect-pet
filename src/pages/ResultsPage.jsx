@@ -13,6 +13,7 @@ export default function ResultsPage() {
     setDisplayQuestion(0) // Vraćanje prvog pitanja (zajedno sa "/quiz" iz Linka)
   }
 
+  console.log(answers)
   return (
     <div>
       <main>

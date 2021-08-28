@@ -34,6 +34,8 @@ export default function QuizPage() {
           <div className="btn-container">
             <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[0].answer}</button> {/* Prvi odgovor */}
             <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[1].answer}</button> {/* Drugi odgovor */}
+            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[2].answer}</button>
+            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[3].answer}</button>
           </div>
         </div>
       </main>

@@ -6,7 +6,14 @@ export const QuestionList = [
     },
     {
       answer: "big",
-    }]
+    },
+    {
+      answer: "fluffy",
+    },
+    {
+      answer: "energetic",
+    }
+  ]
   },
   {
     text: "Your perfect likes to:",
@@ -15,7 +22,14 @@ export const QuestionList = [
     },
     {
       answer: "run a lot",
-    }]
+    },
+    {
+      answer: "sleep a lot",
+    },
+    {
+      answer: "play a lot",
+    }
+  ]
   },
   {
     text: "Your perfect hates:",
@@ -24,6 +38,13 @@ export const QuestionList = [
     },
     {
       answer: "cold weather",
-    }]
+    },
+    {
+      answer: "when it's raining",
+    },
+    {
+      answer: "it's snowing",
+    }
+  ]
   }
 ];

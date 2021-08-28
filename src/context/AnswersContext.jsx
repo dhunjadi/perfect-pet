@@ -5,6 +5,7 @@ export const AnswersContext = createContext();
 export const AnswersContextProvider = ({children}) => {
 
     const [answers, setAnswers] = useState([])
+    const [petName, setPetName] = useState()
 
     // Spremanje odgovora iz local storage-a u state
 
@@ -22,7 +23,7 @@ export const AnswersContextProvider = ({children}) => {
     })
 
     return(
-        <AnswersContext.Provider value={{ answers, setAnswers }}>
+        <AnswersContext.Provider value={{ answers, setAnswers, petName, setPetName }}>
         {children}
         </AnswersContext.Provider>
     )

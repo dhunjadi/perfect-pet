@@ -4,7 +4,7 @@ import { QuestionContext } from "../context/QuestionContext";
 import { Link } from "react-router-dom";
 
 export default function ResultsPage() {
-  const { answers, setAnswers } = useContext(AnswersContext);
+  const { answers, setAnswers, petName } = useContext(AnswersContext);
   const [reset] = useState(answers) // Spremanje redosliejda slova prije promjene
 
   const { setDisplayQuestion } = useContext(QuestionContext);
@@ -44,10 +44,12 @@ export default function ResultsPage() {
     <div>
       <main>
         <h1>Results Page</h1>
-        <h1>
-          My pet is {answers[0]}, and although he likes to {answers[1]}, he
+        {petName ? <h1> {/* Provjera postoji li petName. Ako postoji, prikazuje se rezultat sa petName a ako ne postoji, prikazuje se rezultat bez petName  */}
+          My pet {petName} is {answers[0]}, and although he likes to {answers[1]}, he
           really hates {answers[2]}
-        </h1>
+        </h1> : <h1>
+          My pet is {answers[0]}, and although he likes to {answers[1]}, he
+          really hates {answers[2]} </h1>}
         <button onClick={() => handleScramble(answers)}>Scramble</button>
         <button onClick={handleReset}>Reset</button>
         <Link to="/quiz">

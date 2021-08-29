@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { QuestionList } from "../QuestionList";
 import { Link } from "react-router-dom";
 import { AnswersContext } from "../context/AnswersContext";
+import configData from '../configData.json'
 
 export default function HomePage() {
 
@@ -17,10 +18,10 @@ const { answers, setAnswers, petName, setPetName } = useContext(AnswersContext)
 
   return (
     <main>
-      <div className="container">
+      <div id="home-page">
         <h1>A Perfect Pet</h1>
         <h3>Enter Pet's Name</h3>
-        <input type="text" placeholder={petName} onChange={(e)=> (setPetName(e.target.value))}/> {/* SetPetName sprema input u AnswersContext */}
+        <input type="text" placeholder={petName} onChange={(e)=> (setPetName(e.target.value))} maxLength={configData.inputLimit}/> {/* SetPetName sprema input u AnswersContext */}
         <Link to="/quiz"><button>Start the Quiz</button></Link>
         <Link to="/results"><button onClick={handleRandomize}>Randomize</button></Link>
       </div>

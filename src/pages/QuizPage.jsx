@@ -28,14 +28,13 @@ export default function QuizPage() {
   return (
     <div id="quiz-page">
       <main>
-        <h1>Quiz Page</h1>
         <div className="quiz-container">
           <h1>{QuestionList[displayQuestion].text}</h1> {/* Tekst pitanja */}
           <div className="btn-container">
             <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[0].answer}</button> {/* Prvi odgovor */}
             <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[1].answer}</button> {/* Drugi odgovor */}
-            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[2].answer}</button>
-            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[3].answer}</button>
+            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[2].answer}</button> {/* Treći odgovor */}
+            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[3].answer}</button> {/* Četvrti odgovor */}
           </div>
         </div>
       </main>

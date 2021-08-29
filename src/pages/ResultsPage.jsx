@@ -1,15 +1,14 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AnswersContext } from "../context/AnswersContext";
 import { QuestionContext } from "../context/QuestionContext";
 import { Link } from "react-router-dom";
 
 export default function ResultsPage() {
   const { answers, setAnswers, petName } = useContext(AnswersContext);
-  const [reset] = useState(answers) // Spremanje redosliejda slova prije promjene
+  const [reset] = useState(answers) // Spremanje redoslijeda slova prije promjene
 
   const { setDisplayQuestion } = useContext(QuestionContext);
-  const resetAnswers = useRef.current = answers
-  console.log(resetAnswers)
+
 
   const handleRetry = () => {
     setAnswers([]); // Brisanje odabranih odgovora
@@ -41,9 +40,8 @@ export default function ResultsPage() {
   }
 
   return (
-    <div>
+    <div id='results-page'>
       <main>
-        <h1>Results Page</h1>
         {petName ? <h1> {/* Provjera postoji li petName. Ako postoji, prikazuje se rezultat sa petName a ako ne postoji, prikazuje se rezultat bez petName  */}
           My pet {petName} is {answers[0]}, and although he likes to {answers[1]}, he
           really hates {answers[2]}

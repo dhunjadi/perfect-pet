@@ -3,6 +3,7 @@ import { QuestionList } from "../QuestionList";
 import { useHistory } from "react-router-dom";
 import { AnswersContext } from "../context/AnswersContext";
 import { QuestionContext } from "../context/QuestionContext";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function QuizPage() {
 
@@ -24,6 +25,13 @@ export default function QuizPage() {
     }
   };
 
+  // Funkcija za prikaz odgovora
+  const abc = (ans) => {
+    return(
+      <button key={uuidv4()} onClick={handleClickedAnswer}>{ans.answer}</button> 
+    )
+  }
+
 
   return (
     <div id="quiz-page">
@@ -31,10 +39,7 @@ export default function QuizPage() {
         <div className="quiz-container">
           <h1>{QuestionList[displayQuestion].text}</h1> {/* Tekst pitanja */}
           <div className="btn-container">
-            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[0].answer}</button> {/* Prvi odgovor */}
-            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[1].answer}</button> {/* Drugi odgovor */}
-            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[2].answer}</button> {/* Treći odgovor */}
-            <button onClick={handleClickedAnswer}>{QuestionList[displayQuestion].answers[3].answer}</button> {/* Četvrti odgovor */}
+              {QuestionList[displayQuestion].answers.map(abc)} {/* Prikaz odgovora */}
           </div>
         </div>
       </main>

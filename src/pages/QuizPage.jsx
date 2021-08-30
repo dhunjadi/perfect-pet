@@ -26,7 +26,7 @@ export default function QuizPage() {
   };
 
   // Funkcija za prikaz odgovora
-  const abc = (ans) => {
+  const showAnswers = (ans) => {
     return(
       <button key={uuidv4()} onClick={handleClickedAnswer}>{ans.answer}</button> 
     )
@@ -39,7 +39,7 @@ export default function QuizPage() {
         <div className="quiz-container">
           <h1>{QuestionList[displayQuestion].text}</h1> {/* Tekst pitanja */}
           <div className="btn-container">
-              {QuestionList[displayQuestion].answers.map(abc)} {/* Prikaz odgovora */}
+              {QuestionList[displayQuestion].answers.map(showAnswers)} {/* Prikaz odgovora */}
           </div>
         </div>
       </main>
